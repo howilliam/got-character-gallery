@@ -1,12 +1,11 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 const Character = ({ family, fullName, imageUrl, title }) => {
     return (
-        <div data-test='character-card' className="card-container">
-            <img data-test='character-image' src={imageUrl} alt={fullName} />
-            <div data-test='character-body' className="card-body">
-                <h1 data-test='character-content'>{title} {fullName} of {family}</h1>
+        <div className="card-container">
+            <img src={ imageUrl } alt={ fullName } />
+            <div className="card-body">
+                <h2>{ title } { fullName } of { family }</h2>
             </div>
         </div>
     );
