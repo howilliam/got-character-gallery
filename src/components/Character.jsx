@@ -1,29 +1,21 @@
-const Character = ({ name, imgUrl, birth, death, race, realm, spouse }) => {
+import PropTypes from 'prop-types'
+
+const Character = ({ family, fullName, imageUrl, title }) => {
     return (
-        <div>
-            <h2>{ name }</h2>
-
-            <img src={ imgUrl } alt={ name } />
-
-            <ul>
-                <li>
-                    Date of Birth: { birth }
-                </li>
-                <li>
-                    Date of Death: { death }
-                </li>
-                <li>
-                    Race: { race }
-                </li>
-                <li>
-                    Realm: { realm }
-                </li>
-                <li>
-                    Spouse: { spouse }
-                </li>
-            </ul>
+        <div className="card-container">
+            <img src={ imageUrl } alt={ fullName } />
+            <div className="card-body">
+                <h2>{ title } { fullName } of { family }</h2>
+            </div>
         </div>
     );
 };
+
+Character.propTypes = {
+    family: PropTypes.string,
+    fullName: PropTypes.string,
+    imageUrl: PropTypes.string,
+    title: PropTypes.string,
+}
 
 export default Character;

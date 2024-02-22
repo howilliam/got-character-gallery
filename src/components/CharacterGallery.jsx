@@ -1,12 +1,16 @@
-import characterData from '../data/characterData.json'
-import Character from './Character'
+import characterData from '../data/characterData.json';
+import Character from './Character';
 
 const CharacterGallery = () => {
-    const listOfChars = characterData.map((char, i) => <Character { ...char } key={ i } />)
+    const characterList = characterData.map(character =>
+        <Character { ...character } key={ character.id } />
+    );
+
     return (
-        <section>
-            { listOfChars }
-        </section>
+        <div
+            className='gallery-container'>
+            { characterList }
+        </div>
     );
 };
 
