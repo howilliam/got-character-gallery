@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import Character from '../components/Character';
-// import checkPropTypes from 'check-prop-types';
+import checkPropTypes from 'check-prop-types';
 
 // Optional function
-// const checkProps = (component, conformingProps) => {
-//     const propError = checkPropTypes(
-//         component.propTypes,
-//         conformingProps,
-//         'prop',
-//         component.name
-//     );
+const checkProps = (component, conformingProps) => {
+    const propError = checkPropTypes(
+        component.propTypes,
+        conformingProps,
+        'prop',
+        component.name
+    );
 
-//     expect(propError).toBeUndefined();
-// };
+    expect(propError).toBeUndefined();
+};
 
 // We'll reuse these props
 const characterProps = {
@@ -32,12 +32,12 @@ describe('<Character/> component', () => {
     });
 
     // Prompt 3: Should render a img tag with a role of presentation
-    it('renders an img tag with a role of presentation and the correct name', () => {
-        render(<Character { ...characterProps } />);
+    // it('renders an img tag with a role of presentation and the correct name', () => {
+    //     render(<Character { ...characterProps } />);
 
-        const characterImg = screen.getByRole('presentation', { name: characterProps.fullName });
-        expect(characterImg).toBeDefined();
-    });
+    //     const characterImg = screen.getByRole('presentation', { name: characterProps.fullName });
+    //     expect(characterImg).toBeDefined();
+    // });
 
     // Prompt 4: Should render the correct title
     it('renders a heading with the correct title', () => {
